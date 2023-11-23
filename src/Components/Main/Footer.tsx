@@ -15,7 +15,7 @@ function Footer() {
         </li>
       </ul>
 
-      <h1 className="text-xs">Developed by Jan Russel "Sel" Gorembalem</h1>
+      <h1 className="text-xs">Developed by Jan Russel Gorembalem</h1>
       <h1 className="text-xs">@2023</h1>
     </div>
   );
