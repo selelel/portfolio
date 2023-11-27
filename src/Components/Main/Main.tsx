@@ -33,7 +33,6 @@ const Main = () => {
         <div id="project">
           <Projects />
         </div>
-        <Footer />
       </div>
     </>
   );
