@@ -9,6 +9,12 @@ type Props = {
   children: ReactNode;
 };
 
+interface BlogPost {
+  [x: string]: ReactNode;
+  content: ReactNode;
+  id: string;
+}
+
 type Outputprops = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,11 +24,14 @@ type Outputprops = {
   phoneMenu: string;
   tosetTestModal: () => void;
   testModal: boolean;
+  setDatabase: React.Dispatch<React.SetStateAction<BlogPost[]>>;
+  database: BlogPost[];
 };
 
 const Context = createContext<Outputprops | null>(null);
 
 const Provider = ({ children }: Props) => {
+  const [database, setDatabase] = useState<BlogPost[]>([]);
   const [isOpen, setOpen] = useState(false);
   const [modal, setModal] = useState(false);
   const [testModal, setTestModal] = useState(false);
@@ -51,6 +60,8 @@ const Provider = ({ children }: Props) => {
         phoneMenu,
         testModal,
         tosetTestModal,
+        setDatabase,
+        database,
       }}
     >
       {children}
@@ -59,6 +70,7 @@ const Provider = ({ children }: Props) => {
 };
 
 const cont = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   return useContext(Context);
 };
 

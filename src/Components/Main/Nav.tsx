@@ -1,8 +1,8 @@
 import Button from "../../Reuseable UI/Button";
 import Hamburger from "hamburger-react";
 import { cont } from "../../Context/Context";
-import classNames from "classnames";
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 type nav = {
   children: ReactNode;
@@ -34,13 +34,13 @@ const Nav = () => {
   return (
     <div className="fixed top-0 z-30 flex align-middle">
       <div className={context?.phoneMenu}>
-        <Navigate section={"./#hero"} className="font-thin text-xl">
+        <Navigate section={"/portfolio/#hero"} className="font-thin text-xl">
           Home
         </Navigate>
-        <Navigate section={"./#about"} className="font-thin text-xl">
+        <Navigate section={"/portfolio/#about"} className="font-thin text-xl">
           About
         </Navigate>
-        <Navigate section={"./#project"} className="font-thin text-xl">
+        <Navigate section={"/portfolio/#project"} className="font-thin text-xl">
           Project
         </Navigate>
         <Navigate onClick={context?.tosetModal} className="font-thin text-xl">
@@ -62,15 +62,18 @@ const Nav = () => {
           />
         </div>
         <div className="flex gap-2 media">
-          <Navigate section={"./#hero"} className="font-thin ">
+          <Navigate section={"/portfolio/#hero"} className="font-thin ">
             Home
           </Navigate>
-          <Navigate section={"./#about"} className="font-thin">
+          <Navigate section={"/portfolio/#about"} className="font-thin">
             About
           </Navigate>
-          <Navigate section={"./#project"} className="font-thin">
+          <Navigate section={"/portfolio/#project"} className="font-thin">
             Project
           </Navigate>
+          <Link to={"/portfolio/blogs"}>
+            <Button className="font-thin">My Blogs</Button>
+          </Link>
           <Navigate onClick={context?.tosetModal} className="font-bold">
             Resume
           </Navigate>

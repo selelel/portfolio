@@ -1,8 +1,9 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { Fragment, ReactNode, useEffect } from "react";
 import classNames from "classnames";
 import ReactDOM from "react-dom";
 import { cont } from "../Context/Context";
 import { FaArrowLeft } from "react-icons/fa";
+import Resume from "../Components/Resume/Resume";
 
 type Props = {
   children: ReactNode;
@@ -11,7 +12,6 @@ type Props = {
 };
 
 function Modals({ children, ...rest }: Props): JSX.Element | null {
-  const context = cont();
   const classes = classNames(
     "fixed inset-0 top-16 w-5/12 border border-black h-[30rem] overflow-auto scrollbar-hide bg-white m-3 min-w-[20rem] mx-auto rounded-xl shadow-2xl",
     rest.className
@@ -32,7 +32,7 @@ function Modals({ children, ...rest }: Props): JSX.Element | null {
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
-  });
+  }, []);
 
   return ReactDOM.createPortal(
     <div>
@@ -51,4 +51,22 @@ function Modals({ children, ...rest }: Props): JSX.Element | null {
   );
 }
 
+const display = () => {
+  const context = cont();
+
+  return (
+    <Fragment>
+      {context?.modal && (
+        <Modals
+          onClose={() => {
+            context?.tosetModal();
+          }}
+        >
+          <Resume />
+        </Modals>
+      )}{" "}
+    </Fragment>
+  );
+};
+export { display };
 export default Modals;

@@ -10,8 +10,6 @@ import Footer from "./Footer";
 const Main = () => {
   const context = useContext(Context);
 
-  useEffect(() => {}, []);
-
   return (
     <>
       {context?.modal && (
