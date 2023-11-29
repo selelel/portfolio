@@ -24,7 +24,12 @@ function ArticleIndi() {
   const { id } = useParams();
   const context = cont();
   const number = Number(id) || 0;
-  const currentArticle = context?.database[number] as BlogPost | undefined;
+  const sortedPosts = [...(context?.database || [])].sort((a, b) => {
+    const orderA = typeof a.order === "number" ? a.order : 0;
+    const orderB = typeof b.order === "number" ? b.order : 0;
+    return orderB - orderA;
+  });
+  const currentArticle = sortedPosts[number] as unknown as BlogPost | undefined;
 
   if (currentArticle === undefined) {
     return <div>Article not found</div>;

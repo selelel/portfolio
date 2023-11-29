@@ -35,6 +35,7 @@ function Blog() {
     const orderB = typeof b.order === "number" ? b.order : 0;
     return orderB - orderA;
   });
+
   return (
     <div className="mt-[5.3rem] mx-10 flex flex-col gap-3">
       {display()}
@@ -45,7 +46,7 @@ function Blog() {
             <ArticlePanel
               title={post.title}
               desc={post.desc}
-              countDays={post.CountDate}
+              countDays={post.countDate}
             />
           </Link>
         </Fragment>
