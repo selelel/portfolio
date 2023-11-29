@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
 import { cont } from "../../Context/Context";
 import Footer from "./Footer";
 import { display } from "../../Reuseable UI/Modals";
@@ -30,14 +30,29 @@ function ArticleIndi() {
     return <div>Article not found</div>;
   }
 
+  const components: Components = {
+    // eslint-disable-next-line jsx-a11y/heading-has-content
+    h1: ({ node, ...props }) => (
+      <h1 style={{ fontSize: "1.5rem" }} {...props} />
+    ),
+    h2: ({ node, ...props }) => (
+      <h2 style={{ fontSize: "1.3rem", fontWeight: "10" }} {...props} />
+    ),
+    h3: ({ node, ...props }) => (
+      <span style={{ textAlign: "right" }} {...props} />
+    ),
+  };
+
   return (
     <div className="mt-[5.3rem] mx-20 flex flex-col gap-3">
       {display()}
-      <img
-        className="object-none w-full min-w-fit h-[15rem] overflow-hidden"
-        src={currentArticle.pic?.replaceAll('"', "")}
-        alt="cover"
-      />
+      <div className="w-full h-[15rem] overflow-hidden">
+        <img
+          className="object-cover object-center h-full w-full"
+          src={currentArticle.pic?.replaceAll('"', "")}
+          alt="cover"
+        />
+      </div>
       <p className="text-[0.60rem] my-1 text-right">
         {currentArticle.posted} | @{currentArticle.author?.name}
       </p>
@@ -48,13 +63,7 @@ function ArticleIndi() {
           {currentArticle.desc}
         </h1>
         <div className="text-justify mt-5" />
-        <ReactMarkdown
-          components={{
-            h1: ({ node, ...props }) => (
-              <h1 style={{ fontSize: "1.5rem" }} {...props} />
-            ),
-          }}
-        >
+        <ReactMarkdown components={components}>
           {String(currentArticle.content)}
         </ReactMarkdown>
       </div>

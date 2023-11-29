@@ -60,6 +60,15 @@ const info = {
 
 const projects = [
   {
+    name: "Diurnarius",
+    description:
+      "Diurnarius is your digital companion, captures your daily experiences, reflections, and aspirations. It's a space to document your progress, share your thoughts, and connect with others.",
+    urlGit: "https://github.com/selelel/diurnarius",
+    urlHomepage: "https://selelel.github.io/diurnarius/",
+    urlImg: require("./img/diurnarius.gif"),
+    techStack: ["Tailwind", "ReactJS", "Firebase"],
+  },
+  {
     name: "Pawn Reciept",
     description:
       "Pawn Reciept: Elevate your Chess.com stats with stylish receipts for a visually pleasing showcase of chess prowess.",

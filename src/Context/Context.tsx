@@ -35,7 +35,7 @@ const Provider = ({ children }: Props) => {
   const [isOpen, setOpen] = useState(false);
   const [modal, setModal] = useState(false);
   const [testModal, setTestModal] = useState(false);
-  database.sort();
+
   const tosetModal = () => {
     setModal(!modal);
   };

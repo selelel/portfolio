@@ -43,6 +43,9 @@ const Nav = () => {
         <Navigate section={"/portfolio/#project"} className="font-thin text-xl">
           Project
         </Navigate>
+        <Link to={"/portfolio/blogs"}>
+          <Button className="font-thin text-xl">My Blogs</Button>
+        </Link>
         <Navigate onClick={context?.tosetModal} className="font-thin text-xl">
           Resume
         </Navigate>
