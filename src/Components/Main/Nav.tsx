@@ -56,7 +56,7 @@ const Nav = () => {
         </Navigate>
       </div>
 
-      <div className=" pt-5 w-screen flex px-10 justify-between bg-white">
+      <div className=" pt-5 py-2 w-screen flex px-10 justify-between bg-white">
         <a href="./#hero">
           <p className="text-3xl font-bold h-fit my-auto">{Logo}</p>
         </a>

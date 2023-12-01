@@ -1,23 +1,21 @@
-/* eslint-disable jsx-a11y/heading-has-content */
 import { useParams } from "react-router-dom";
-import ReactMarkdown, { Components } from "react-markdown";
 import { cont } from "../../Context/Context";
-import Footer from "./Footer";
 import { display } from "../../Reuseable UI/Modals";
+import "../../myComponent.css";
+import { sanitize } from "dompurify";
 
 interface Author {
   name: string;
-  // Add other properties if needed
 }
 
 interface BlogPost {
   id: string;
   pic?: string;
-  posted: string;
+  posted?: string;
   author?: Author;
-  title: string;
-  desc: string;
-  content: string | number; // Adjust the type based on your data structure
+  title?: string;
+  desc?: string;
+  content?: string | undefined; // Allow content to be undefined
 }
 
 function ArticleIndi() {
@@ -34,19 +32,6 @@ function ArticleIndi() {
   if (currentArticle === undefined) {
     return <div>Article not found</div>;
   }
-
-  const components: Components = {
-    // eslint-disable-next-line jsx-a11y/heading-has-content
-    h1: ({ node, ...props }) => (
-      <h1 style={{ fontSize: "1.5rem" }} {...props} />
-    ),
-    h2: ({ node, ...props }) => (
-      <h2 style={{ fontSize: "1.3rem", fontWeight: "10" }} {...props} />
-    ),
-    h3: ({ node, ...props }) => (
-      <span style={{ textAlign: "right" }} {...props} />
-    ),
-  };
 
   return (
     <div className="mt-[5.3rem] mx-20 flex flex-col gap-3">
@@ -68,9 +53,12 @@ function ArticleIndi() {
           {currentArticle.desc}
         </h1>
         <div className="text-justify mt-5" />
-        <ReactMarkdown components={components}>
-          {String(currentArticle.content)}
-        </ReactMarkdown>
+        <div
+          className="myComponent"
+          dangerouslySetInnerHTML={{
+            __html: sanitize(currentArticle.content ?? ""),
+          }}
+        />
       </div>
     </div>
   );
