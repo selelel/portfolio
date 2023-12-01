@@ -43,7 +43,12 @@ const Nav = () => {
         <Navigate section={"/portfolio/#project"} className="font-thin text-xl">
           Project
         </Navigate>
-        <Link to={"/portfolio/blogs"}>
+        <Link
+          onClick={() => {
+            context?.setOpen(false);
+          }}
+          to={"/portfolio/blogs"}
+        >
           <Button className="font-thin text-xl">My Blogs</Button>
         </Link>
         <Navigate onClick={context?.tosetModal} className="font-thin text-xl">
@@ -51,7 +56,7 @@ const Nav = () => {
         </Navigate>
       </div>
 
-      <div className=" pt-5 py-2 w-screen flex px-10 justify-between bg-white">
+      <div className=" pt-5 w-screen flex px-10 justify-between bg-white">
         <a href="./#hero">
           <p className="text-3xl font-bold h-fit my-auto">{Logo}</p>
         </a>

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <div className="mx-10 flex flex-col items-center text-sm">
+    <div className="mx-10 mt-32 flex flex-col items-center text-sm">
       <h1 className="font-bold text-lg">{"<sel/>"}</h1>
 
       <ul className="flex gap-3 cursor-pointer">
@@ -13,9 +15,7 @@ function Footer() {
         <li>
           <a href="/portfolio/#project">Project</a>
         </li>
-        <li>
-          <a href="/portfolio/blogs">My Blogs</a>
-        </li>
+        <Link to="/portfolio/blogs">My Blogs</Link>
       </ul>
 
       <h1 className="text-xs">Developed by Jan Russel Gorembalem</h1>

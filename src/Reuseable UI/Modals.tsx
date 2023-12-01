@@ -13,7 +13,7 @@ type Props = {
 
 function Modals({ children, ...rest }: Props): JSX.Element | null {
   const classes = classNames(
-    "fixed inset-0 top-16 w-5/12 border border-black h-[30rem] overflow-auto scrollbar-hide bg-white m-3 min-w-[20rem] mx-auto rounded-xl shadow-2xl",
+    "fixed inset-0 top-16 w-5/12 border border-black h-[30rem] overflow-auto scrollbar-hide bg-white m-3 mt-10 min-w-[20rem] mx-auto rounded-xl shadow-2xl",
     rest.className
   );
 
@@ -26,6 +26,7 @@ function Modals({ children, ...rest }: Props): JSX.Element | null {
   const container = document.createElement("div");
   modalRoot.appendChild(container);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     document.querySelector("#root") as HTMLElement;
     document.body.classList.add("overflow-hidden");
