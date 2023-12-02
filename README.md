@@ -18,7 +18,13 @@ My portfolio is a visual journey through my creative work and skills. It serves 
 
 ## Projects
 
-### Pawn Reciept 
+### Diurnarius 
+
+- **Description:** Diurnarius is your digital companion, captures your daily experiences, reflections, and aspirations. It's a space to document your progress, share your thoughts, and connect with others.
+- **Technologies Used:** TailwindCSS, ReactJS, Firebase
+- **Link to Project:** https://selelel.github.io/diurnarius/
+
+- ### Pawn Reciept 
 
 - **Description:** Pawn Reciept: Elevate your Chess.com stats with stylish receipts for a visually pleasing showcase of chess prowess.
 - **Technologies Used:** TailwindCSS, ReactJS,Typescript
