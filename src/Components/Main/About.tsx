@@ -1,20 +1,17 @@
-import { useState } from "react";
 import TagIcon from "../../Reuseable UI/tagIcon";
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
 const About = () => {
   const { ref, inView } = useInView({
-    threshold: 0.15,
+    threshold: 0.25,
+    triggerOnce: true,
   });
 
   const classes = classNames(
-    "mx-auto my-auto min-h-[30rem] flex flex-col items-center",
-    inView ? " " : "section--hidden"
+    "flex flex-col items-center section",
+    inView ? "" : "section--hidden"
   );
-
-  if (inView) {
-  }
 
   return (
     <>

@@ -97,10 +97,15 @@
   cursor: pointer;
   background-position: -100%;
 }
+.section {
+  padding: 5rem 3rem;
+  border-top: 1px solid #ddd;
+  transition: transform 1s, opacity 1s;
+}
+
 .section--hidden {
   opacity: 0;
   transform: translateY(8rem);
-  transition: transform 1s, opacity 1s;
 }
 
 body {
