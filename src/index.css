@@ -97,6 +97,11 @@
   cursor: pointer;
   background-position: -100%;
 }
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+  transition: transform 1s, opacity 1s;
+}
 
 body {
   font-family: "Poppins", sans-serif;

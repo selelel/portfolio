@@ -74,7 +74,7 @@ const projects = [
       "Pawn Reciept: Elevate your Chess.com stats with stylish receipts for a visually pleasing showcase of chess prowess.",
     urlGit: "https://github.com/selelel/pawn-peek",
     urlHomepage: "https://selelel.github.io/pawn-reciept",
-    urlImg: require("./img/soon.gif"),
+    urlImg: require("./img/chess_reciept.gif"),
     techStack: ["Tailwind", "ReactJS", "TypeScript"],
   },
   {
