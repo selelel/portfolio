@@ -22,7 +22,7 @@ function Panel({ ...rest }: prop) {
 
   return (
     <>
-      <div className="grid md:flex grid-col lg:grid-cols-2 items-center gap-5 lg:gap-10 p-10 rounded-lg h-fit mb-1">
+      <div className="grid md:flex grid-col lg:grid-cols-2 items-center gap-5 lg:gap-10 md:p-10 rounded-lg h-fit mb-1">
         <div className="mx-auto align-middle max-w-[23rem]">
           <div className="text-2xl md:text-3xl font-semibold my-1">
             {rest.name}

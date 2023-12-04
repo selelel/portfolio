@@ -10,7 +10,7 @@ const Projects = () => {
   });
 
   const classes = classNames(
-    "mx-10 mt-32 mb-32 min-h-[30rem] flex flex-col justify-center items-center section",
+    "md:mx-10 mt-32 mb-32 min-h-[30rem] flex flex-col justify-center items-center section",
     inView ? "" : "section--hidden"
   );
 

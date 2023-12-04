@@ -34,7 +34,7 @@ function ArticleIndi() {
   }
 
   return (
-    <div className="mt-[5.3rem] mx-20 flex flex-col gap-3">
+    <div className="mt-[5.3rem] mx-5 md:mx-20 flex flex-col gap-3">
       {display()}
       <div className="w-full h-[15rem] overflow-hidden">
         <img
