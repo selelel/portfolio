@@ -9,7 +9,7 @@ const About = () => {
   });
 
   const classes = classNames(
-    "flex flex-col items-center section",
+    "flex flex-col items-center section bg-[#f8f8f8]",
     inView ? "" : "section--hidden"
   );
 
@@ -17,7 +17,7 @@ const About = () => {
     <>
       <div ref={ref} className={classes} id="skills">
         <Skill />
-        <div className="w-9/12 mt-24 flex md:flex-nowrap flex-wrap items-center gap-0 px-auto">
+        <div className="md:w-9/12 mt-24 flex md:flex-nowrap flex-wrap items-center gap-0 px-auto">
           <p className="min-w-fit pr-1 py-2 text-3xl font-semibold">About me</p>
           <div className="md:py-6 border-black md:border-l-2 md:ml-3 md:pl-10 w-full">
             <p className="text-2xl font-semibold mb-5">
@@ -57,7 +57,7 @@ const Skill = () => {
   });
   return (
     <>
-      <div className="gap-1 mx-auto w-9/12" id="skills">
+      <div className="gap-1 mx-auto md:w-9/12" id="skills">
         <div className=" mx-auto mb-2">
           <p className="w-fit font-semibold text-3xl">Skills</p>
         </div>

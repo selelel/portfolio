@@ -4,8 +4,8 @@ import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
 const Projects = () => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0.15,
+  const { ref, inView } = useInView({
+    threshold: 0.05,
     triggerOnce: true,
   });
 
