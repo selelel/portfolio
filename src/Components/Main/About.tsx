@@ -38,10 +38,6 @@ const About = () => {
 };
 
 const Skill = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.25,
-    triggerOnce: true,
-  });
   const Icons = [
     "HTML",
     "CSS",
@@ -50,9 +46,9 @@ const Skill = () => {
     "Tailwind",
     "Git",
     "ReactJS",
+    "Firebase",
+    "Supabase",
     "JQuery",
-    "UX/UI Design",
-    "NPM",
     "Node",
     "SQL",
     "Andriod Studio",
