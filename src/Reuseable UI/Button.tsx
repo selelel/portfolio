@@ -25,7 +25,7 @@ const Button = ({
 }: propVarie) => {
   const classes = classNames(
     rest.className,
-    "flex gap-2 items-center p-2 duration-75 ease-out active:scale-95 font-semibold rounded text-black active:opacity-90",
+    "flex gap-2 items-center p-1 px-3 duration-75 ease-out active:scale-95 font-semibold rounded text-black active:opacity-90",
 
     {
       "text-black border border-black bg-transparent": outline,

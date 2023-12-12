@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Projects from "./Projects";
 import Footer from "./Footer";
+import Contact from "./Contact";
 
 const Main = () => {
   const context = useContext(Context);
@@ -32,6 +33,9 @@ const Main = () => {
         </div>
         <div id="project">
           <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
         </div>
       </div>
     </>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="mx-10 mt-32 flex flex-col items-center text-sm">
+    <div className="mx-10 mb-4 mt-32 flex flex-col items-center text-sm">
       <h1 className="font-bold text-lg">{"<sel/>"}</h1>
 
       <ul className="flex gap-3 cursor-pointer">
