@@ -1,34 +1,11 @@
-import React, { Fragment, ReactNode, useEffect } from "react";
-import { db } from "../../utils/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import React, { Fragment } from "react";
 import ArticlePanel from "../../Reuseable UI/articlePanel";
 import { Link } from "react-router-dom";
-import { cont } from "../../Context/Context";
+import { useDataContext } from "../../Context/Context";
 import { display } from "../../Reuseable UI/Modals";
 
-interface BlogPost {
-  [x: string]: ReactNode;
-  content: ReactNode;
-  id: string;
-}
-
 function Blog() {
-  const Context = cont();
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const querySnapshot = await getDocs(collection(db, "contents"));
-      const data: BlogPost[] = [];
-
-      querySnapshot.forEach((doc) => {
-        data.push({ ...doc.data(), id: doc.id } as BlogPost);
-      });
-
-      Context?.setDatabase(data);
-    };
-
-    getPosts();
-  }, []);
+  const Context = useDataContext();
 
   const sortedPosts = [...(Context?.database || [])].sort((a, b) => {
     const orderA = typeof a.order === "number" ? a.order : 0;

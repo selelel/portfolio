@@ -1,9 +1,7 @@
-import { cont } from "../../Context/Context";
 import { info } from "../../Context/Info";
 import Button from "../../Reuseable UI/Button";
 
 const Resume = () => {
-  const context = cont();
   return (
     <>
       <div className="mx-3 p-3 text-[0.7rem] tracking-wide">

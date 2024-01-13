@@ -1,8 +1,12 @@
 import Button from "../../Reuseable UI/Button";
 import Hamburger from "hamburger-react";
-import { cont } from "../../Context/Context";
-import { ReactNode } from "react";
+import { useDataContext } from "../../Context/Context";
+import { ReactNode, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BlogThunk } from "../../Store/Thunks/BlogThunk";
+import { useDispatch } from "react-redux";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../utils/firebase";
 
 type nav = {
   children: ReactNode;
@@ -13,7 +17,7 @@ type nav = {
 };
 
 const Nav = () => {
-  const context = cont();
+  const context = useDataContext();
   const Logo = "<sel/>";
 
   const Navigate = ({ children, section, ...rest }: nav) => {

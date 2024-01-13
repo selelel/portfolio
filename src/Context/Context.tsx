@@ -2,14 +2,14 @@ import { ReactNode, useContext } from "react";
 import { createContext } from "react";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
-import Modals from "../Reuseable UI/Modals";
-import Resume from "../Components/Resume/Resume";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
 type Props = {
   children: ReactNode;
 };
 
-interface BlogPost {
+export interface BlogPost {
   [x: string]: ReactNode;
   content: ReactNode;
   id: string;
@@ -69,10 +69,9 @@ const Provider = ({ children }: Props) => {
   );
 };
 
-const cont = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const useDataContext = () => {
   return useContext(Context);
 };
 
-export { Provider, cont };
+export { Provider, useDataContext };
 export default Context;

@@ -60,7 +60,7 @@ function Contact() {
 
         <form
           onSubmit={submitHandler}
-          className="flex flex-col items-center justify-center mx-auto w-full md:w-2/3 gap-3"
+          className="flex flex-col items-center justify-center mx-auto w-full md:w-1/2 gap-3"
         >
           <Input
             onChange={nameHandler}

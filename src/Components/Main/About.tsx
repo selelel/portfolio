@@ -39,13 +39,12 @@ const About = () => {
 
 const Skill = () => {
   const Icons = [
-    "HTML",
-    "CSS",
     "JavaScript",
     "Typescript",
     "Tailwind",
     "Git",
-    "ReactJS",
+    "ReactJs",
+    "React-Redux",
     "Firebase",
     "Supabase",
     "JQuery",
