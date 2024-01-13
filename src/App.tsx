@@ -1,6 +1,5 @@
 import Main from "./Components/Main/Main";
-import { Provider } from "./Context/Context";
-import Nav from "./Components/Main/Nav";
+import Navigation from "./Components/Main/Navigation";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Blog from "./Components/Main/Blog";
 import ArticleIndi from "./Components/Main/BlogIndi";
@@ -29,17 +28,15 @@ function App() {
 
   return (
     <>
-      <Provider>
-        <Router>
-          <Nav />
-          <Routes>
-            <Route path="/portfolio" element={<Main />} />
-            <Route path="/portfolio/blogs" element={<Blog />} />
-            {blogRoutes}
-          </Routes>
-          <Footer />
-        </Router>
-      </Provider>
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/portfolio" element={<Main />} />
+          <Route path="/portfolio/blogs" element={<Blog />} />
+          {blogRoutes}
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }

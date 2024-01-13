@@ -1,12 +1,11 @@
 import Button from "../../Reuseable UI/Button";
 import Hamburger from "hamburger-react";
-import { useDataContext } from "../../Context/Context";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { BlogThunk } from "../../Store/Thunks/BlogThunk";
-import { useDispatch } from "react-redux";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../utils/firebase";
+import { interactionProps } from "../../Types/Slice";
+import { phoneMenu as phoneToggle, resumeModal } from "../../Store";
+import classNames from "classnames";
 
 type nav = {
   children: ReactNode;
@@ -17,14 +16,20 @@ type nav = {
 };
 
 const Nav = () => {
-  const context = useDataContext();
+  const dispatch = useDispatch();
+  const phone = useSelector((state: interactionProps) => state.interaction);
   const Logo = "<sel/>";
+
+  const phoneMenu = classNames(
+    "z-10 fixed left-0 rigth-0 top-0 bg-white w-screen flex flex-col justify-center items-center media-show",
+    phone.phoneToggle ? "animation-slide" : "hidden"
+  );
 
   const Navigate = ({ children, section, ...rest }: nav) => {
     return (
       <a
         onClick={() => {
-          context?.setOpen(false);
+          dispatch(phoneToggle());
         }}
         href={section}
       >
@@ -37,7 +42,7 @@ const Nav = () => {
 
   return (
     <div className="fixed top-0 z-30 flex align-middle">
-      <div className={context?.phoneMenu}>
+      <div className={phoneMenu}>
         <Navigate section={"/portfolio/#hero"} className="font-thin text-xl">
           Home
         </Navigate>
@@ -49,13 +54,18 @@ const Nav = () => {
         </Navigate>
         <Link
           onClick={() => {
-            context?.setOpen(false);
+            dispatch(phoneToggle());
           }}
           to={"/portfolio/blogs"}
         >
           <Button className="font-thin text-xl">My Blogs</Button>
         </Link>
-        <Navigate onClick={context?.tosetModal} className="font-thin text-xl">
+        <Navigate
+          onClick={() => {
+            dispatch(resumeModal());
+          }}
+          className="font-thin text-xl"
+        >
           Resume
         </Navigate>
       </div>
@@ -68,8 +78,10 @@ const Nav = () => {
           <Hamburger
             easing="ease-in "
             duration={0.3}
-            toggled={context?.isOpen}
-            toggle={context?.setOpen}
+            onToggle={() => {
+              dispatch(phoneToggle());
+            }}
+            toggled={phone.phoneToggle}
             size={25}
           />
         </div>
@@ -86,7 +98,12 @@ const Nav = () => {
           <Link to={"/portfolio/blogs"}>
             <Button className="font-thin">My Blogs</Button>
           </Link>
-          <Navigate onClick={context?.tosetModal} className="font-bold">
+          <Navigate
+            onClick={() => {
+              dispatch(resumeModal());
+            }}
+            className="font-bold"
+          >
             Resume
           </Navigate>
         </div>

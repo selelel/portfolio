@@ -11,6 +11,20 @@
       }
     ],
     "disown-opener": "off",
-    "axe/forms": "off"
-  }
+    "axe/forms": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not ios_saf <= 14.8",
+    "not safari <= 14.1"
+  ]
 }

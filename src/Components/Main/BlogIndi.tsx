@@ -1,4 +1,4 @@
-import { display } from "../../Reuseable UI/Modals";
+import DisplayResumeModal from "../../Reuseable UI/DisplayResumeModal";
 import { blogContents } from "../../Types/Slice";
 import "../../myComponent.css";
 import { sanitize } from "dompurify";
@@ -6,7 +6,7 @@ import { sanitize } from "dompurify";
 function ArticleIndi({ props }: blogContents) {
   return (
     <div className="mt-[5.3rem] mx-5 md:mx-20 flex flex-col gap-3">
-      {display()}
+      {DisplayResumeModal()}
       <div className="w-full h-[15rem] overflow-hidden">
         <img
           className="object-cover object-center h-full w-full"

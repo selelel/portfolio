@@ -1,12 +1,13 @@
 import Button from "../../Reuseable UI/Button";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { BsFiletypePdf } from "react-icons/bs";
-import { useDataContext } from "../../Context/Context";
 import { BlogThunk } from "../../Store/Thunks/BlogThunk";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { resumeModal } from "../../Store";
 
 function Hero() {
-  const context = useDataContext();
+  const dispatch = useDispatch();
   useEffect(() => {
     BlogThunk();
   }, []);
@@ -32,7 +33,9 @@ function Hero() {
 
           <Button
             className="flex text-2xl font-thin gap-0 w-fit"
-            onClick={context?.tosetModal}
+            onClick={() => {
+              dispatch(resumeModal());
+            }}
           >
             <BsFiletypePdf /> <p className="text-sm">Resume</p>
           </Button>

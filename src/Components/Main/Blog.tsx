@@ -1,13 +1,14 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import ArticlePanel from "../../Reuseable UI/articlePanel";
 import { Link } from "react-router-dom";
-import { useDataContext } from "../../Context/Context";
-import { display } from "../../Reuseable UI/Modals";
+import { useSelector } from "react-redux";
+import { blogProps } from "../../Types/Slice";
+import DisplayResumeModal from "../../Reuseable UI/DisplayResumeModal";
 
 function Blog() {
-  const Context = useDataContext();
+  const { blog } = useSelector((state: blogProps) => state.blog);
 
-  const sortedPosts = [...(Context?.database || [])].sort((a, b) => {
+  const sortedPosts = [...blog].sort((a, b) => {
     const orderA = typeof a.order === "number" ? a.order : 0;
     const orderB = typeof b.order === "number" ? b.order : 0;
     return orderB - orderA;
@@ -15,11 +16,11 @@ function Blog() {
 
   return (
     <div className="mt-[5.3rem] mx-10 flex flex-col gap-3">
-      {display()}
+      {DisplayResumeModal()}
       <h1 className="text-2xl font-bold">Blogs</h1>
-      {sortedPosts.map((post, i) => (
+      {sortedPosts.map((post) => (
         <Fragment key={post.id}>
-          <Link to={`/portfolio/blogs/${i}`}>
+          <Link to={`/portfolio/blogs/${post?.id}`}>
             <ArticlePanel
               title={post.title}
               desc={post.desc}

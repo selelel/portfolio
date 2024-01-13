@@ -1,17 +1,8 @@
+import { panelProps } from "../Types/Ui";
 import Button from "./Button";
 import TagIcon from "./tagIcon";
-import classNames from "classnames";
 
-type prop = {
-  description: string;
-  name: string;
-  linkGit: string;
-  link: string;
-  linkImg: string;
-  tech: string[];
-};
-
-function Panel({ ...rest }: prop) {
+function Panel({ ...rest }: panelProps) {
   const techUsed = rest.tech.map((element, index) => {
     return (
       <div key={element}>

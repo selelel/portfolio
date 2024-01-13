@@ -1,9 +1,7 @@
-import { Fragment, ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import classNames from "classnames";
 import ReactDOM from "react-dom";
-import { useDataContext } from "../Context/Context";
 import { FaArrowLeft } from "react-icons/fa";
-import Resume from "../Components/Resume/Resume";
 
 type Props = {
   children: ReactNode;
@@ -52,22 +50,4 @@ function Modals({ children, ...rest }: Props): JSX.Element | null {
   );
 }
 
-const display = () => {
-  const context = useDataContext();
-
-  return (
-    <Fragment>
-      {context?.modal && (
-        <Modals
-          onClose={() => {
-            context?.tosetModal();
-          }}
-        >
-          <Resume />
-        </Modals>
-      )}
-    </Fragment>
-  );
-};
-export { display };
 export default Modals;

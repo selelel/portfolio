@@ -1,4 +1,5 @@
 import { BlogReducer } from "../Store/Slices/BlogSlice";
+import { AppInteractionReducer } from "../Store/Slices/Interaction";
 
 export interface blogProps {
   blog: ReturnType<typeof BlogReducer>;
@@ -31,4 +32,9 @@ export interface blogContents {
 export interface blogDetail {
   error: string;
   blog: blogState[];
+}
+
+///App Iteraction///
+export interface interactionProps {
+  interaction: ReturnType<typeof AppInteractionReducer>;
 }

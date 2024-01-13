@@ -10,6 +10,7 @@ const Resume = () => {
             <a
               href="https://drive.google.com/file/d/1Ypo4bVp6dvmr4-s5XlJScgz0l04JlcT7/view?usp=sharing"
               target="_blank"
+              rel="noreferrer"
             >
               Download Resume Here
             </a>
