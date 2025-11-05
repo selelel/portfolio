@@ -3,6 +3,7 @@
 // import Hero from './Hero';
 import About from './About';
 import Careers from './Careers';
+import Certificate from './Certificate';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -15,6 +16,7 @@ export default function LandingPage() {
           {/* <Hero /> */}
           <About />
           <Careers />
+          <Certificate />
           <Contact />
           <Footer />
         </main>
