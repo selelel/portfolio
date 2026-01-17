@@ -60,6 +60,16 @@ const info = {
 
 const projects: Projects_Details[]= [
   {
+    name: "Dooto",
+    description:
+      "Dooto is a productivity app and your daily companion for managing tasks (to-do lists), tracking habits, timing bad habit relapses, and journaling moods daily to keep you motivated and mindful.",
+    urlGit: "https://github.com/selelel/dooto",
+    urlHomepage: "https://dooto-web.vercel.app/",
+    urlImg: require("./img/dooto.png"),
+    techStack: ["Next.js", "React", "TypeScript", "Express", "Prisma", "PostgreSQL", "TailwindCSS"],
+    wip: false,
+  },
+  {
     name: "ChitChat",
     description:
       "ChitChat is a social media app where you can share moments, post updates, and chat with friends seamlessly. Stay connected, express yourself, and explore a vibrant community—all in one place!",
