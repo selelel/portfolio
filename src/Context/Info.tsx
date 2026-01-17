@@ -65,7 +65,7 @@ const projects: Projects_Details[]= [
       "Dooto is a productivity app and your daily companion for managing tasks (to-do lists), tracking habits, timing bad habit relapses, and journaling moods daily to keep you motivated and mindful.",
     urlGit: "https://github.com/selelel/dooto",
     urlHomepage: "https://dooto-web.vercel.app/",
-    urlImg: require("./img/dooto.png"),
+    urlImg: require("./img/dooto.gif"),
     techStack: ["Next.js", "React", "TypeScript", "Express", "Prisma", "PostgreSQL", "TailwindCSS"],
     wip: false,
   },
