@@ -21,11 +21,11 @@ const info = {
       desciption: () => {
         return (
           <div>
-            <h1 className="font-bold">
+            <h1 className='font-bold'>
               STI College Carmona Senior High School
             </h1>
             IT in Mobile App and Web Development (MAWD){" "}
-            <p className="italic mt-1">
+            <p className='italic mt-1'>
               Award: Notable achievements Mobile App Development.
             </p>
           </div>
@@ -37,11 +37,11 @@ const info = {
       desciption: () => {
         return (
           <div>
-            <h1 className="font-bold">
+            <h1 className='font-bold'>
               Bulihan Integrated National High School
             </h1>
             Information and Communication Technology
-            <p className="italic mt-1">Awards: With Honors</p>
+            <p className='italic mt-1'>Awards: With Honors</p>
           </div>
         );
       },
@@ -58,7 +58,17 @@ const info = {
   ],
 };
 
-const projects: Projects_Details[]= [
+const projects: Projects_Details[] = [
+  {
+    name: "Better Honest",
+    description:
+      "Built a full-stack, end-to-end booking and service-marketplace application designed specifically to maximize client conversion rates.",
+    urlGit: "https://github.com/selelel/better-honest",
+    urlHomepage: "https://better-honest-6uuw.vercel.app/",
+    urlImg: require("./img/better-honest.gif"),
+    techStack: ["Next.js", "TypeScript", "Firebase", "TailwindCSS"],
+    wip: false,
+  },
   {
     name: "Dooto",
     description:
@@ -66,7 +76,15 @@ const projects: Projects_Details[]= [
     urlGit: "https://github.com/selelel/dooto",
     urlHomepage: "https://dooto-web.vercel.app/",
     urlImg: require("./img/dooto.gif"),
-    techStack: ["Next.js", "React", "TypeScript", "Express", "Prisma", "PostgreSQL", "TailwindCSS"],
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "TailwindCSS",
+    ],
     wip: false,
   },
   {
@@ -76,7 +94,7 @@ const projects: Projects_Details[]= [
     urlGit: "https://github.com/selelel/chitchat",
     urlImg: require("./img/coming_soon.png"),
     techStack: ["NextJs", "NestJs", "GraphQL", "TypeScript", "MongoDB"],
-    wip: true
+    wip: true,
   },
   {
     name: "Diurnarius",
@@ -86,7 +104,7 @@ const projects: Projects_Details[]= [
     urlHomepage: "https://selelel.github.io/diurnarius/",
     urlImg: require("./img/diurnarius.gif"),
     techStack: ["Tailwind", "ReactJS", "Firebase"],
-    wip: false
+    wip: false,
   },
   {
     name: "Pawn Reciept",
@@ -96,7 +114,7 @@ const projects: Projects_Details[]= [
     urlHomepage: "https://selelel.github.io/pawn-reciept",
     urlImg: require("./img/chess_reciept.gif"),
     techStack: ["Tailwind", "ReactJS", "TypeScript"],
-    wip: false
+    wip: false,
   },
   {
     name: "Portfolio Website",
@@ -106,7 +124,7 @@ const projects: Projects_Details[]= [
     urlHomepage: "https://selelel.github.io/",
     urlImg: require("./img/portfolio.gif"),
     techStack: ["Tailwind", "ReactJS", "TypeScript"],
-    wip: false
+    wip: false,
   },
   {
     name: "Vertext",
@@ -117,10 +135,18 @@ const projects: Projects_Details[]= [
       "https://selelel.github.io/vertext/?fbclid=IwAR2C3kuhUs6n2lm6GiMPt3-N3EwGzVw7s_UX7iGF7kff2JHC4fb_F2KNMew",
     urlImg: require("./img/vertext.gif"),
     techStack: ["Tailwind", "ReactJS"],
-    wip: false
+    wip: false,
   },
 ];
 
-export type Projects_Details = {name: string, description: string, urlGit: string, urlHomepage?: string, urlImg: string, techStack: string[], wip: boolean}
+export type Projects_Details = {
+  name: string;
+  description: string;
+  urlGit: string;
+  urlHomepage?: string;
+  urlImg: string;
+  techStack: string[];
+  wip: boolean;
+};
 
 export { projects, info };
